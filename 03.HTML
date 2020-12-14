@@ -1,0 +1,48 @@
+<html>
+<head>
+<script type="text/javascript">
+function show_prompt()
+{
+var n=document.frm.text1.value;
+if( n == "")
+{
+alert("Please enter the array size");
+}
+else
+{
+var a=new Array();
+var temp;
+for(i=0;i<n;i++)
+{
+var num=prompt("Please enter a number"," ");
+document.frm.arrayTxt.value=document.frm.arrayTxt.value+num+"\n";
+a[i]=parseInt(num);
+}
+var flag=0;
+var search=prompt("Enter the element to be searched ","");
+for(i=0;i<n;i++)
+if(a[i]==search)
+{
+flag=1;
+p=i+1;
+}
+if(flag==1)
+alert("Element " + search + " found at position " +p);
+else
+alert("Sorry!, Element " + search + " not found ");
+document.frm.text1.value="";
+document.frm.arrayTxt.value="";
+}
+}
+</script>
+</head>
+<body>
+<form name="frm">
+<center>
+<h3>To find an element in a given array </h3>
+<hr color="red">
+Enter the array size : <input type="text" name="text1"><br><br>
+<input type="button" onclick="show_prompt()" value="Submit"> <br><br>
+<textarea name="arrayTxt" rows="10" cols="4"></textarea><br>
+</center>
+</form></body></html>

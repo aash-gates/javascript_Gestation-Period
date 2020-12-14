@@ -1,0 +1,42 @@
+<html>
+<head>
+<script type="text/javascript">
+function show_prompt()
+{
+var n=document.frm.text1.value;
+if( n == "")
+{
+alert("Please enter the array size");
+}
+else
+{
+var a=new Array();
+var temp;
+for(i=0;i<n;i++)
+{
+var num=prompt("Please enter a number"," ");
+document.frm.arrayTxt.value=document.frm.arrayTxt.value+num+"\n";
+a[i]=parseInt(num);
+}
+var large=a[0]; for(i=1;i<n;i++) if(a[i]>large) large=a[i];
+var slarge=a[0]; for(i=1;i<n;i++) if(a[i]>slarge && a[i]!=large)
+slarge=a[i];
+alert("The second largest element in the given array is "+slarge);
+document.frm.text1.value="";
+document.frm.arrayTxt.value="";
+}
+}
+</script>
+</head>
+<body>
+<form name="frm">
+<center>
+<h1>To find second largest element in a given array </h1>
+<hr color=”red”>
+Enter the array size : <input type="text" name="text1"><br><br>
+<input type="button" onClick="show_prompt()" value="Submit"> <br><br>
+<textarea name="arrayTxt" rows="10" cols="4"></textarea><br>
+</center>
+</form>
+</body>
+</html>
